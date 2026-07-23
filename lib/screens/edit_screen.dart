@@ -23,7 +23,28 @@ class EditScreen extends ConsumerWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.network(product.image, height: 150),
+                InkWell(
+                  onTap: () {},
+                  borderRadius: BorderRadius.circular(100),
+
+                  child: Container(
+                    width: 100,
+                    height: 100,
+                    padding: const EdgeInsets.all(10),
+
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 3,
+                        style: BorderStyle.solid,
+                      ),
+                      color: Colors.white,
+                    ),
+
+                    child: Image(image: NetworkImage(product.image)),
+                  ),
+                ),
 
                 const SizedBox(height: 10),
 
