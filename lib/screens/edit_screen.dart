@@ -5,17 +5,12 @@ import 'package:riverpod_project_1/models/product_model.dart';
 class EditScreen extends ConsumerWidget {
   final ProductModel product;
 
-  const EditScreen({
-    super.key,
-    required this.product,
-  });
+  const EditScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Edit Product"),
-      ),
+      appBar: AppBar(title: const Text("Edit Product")),
 
       body: Center(
         child: Card(
@@ -28,10 +23,7 @@ class EditScreen extends ConsumerWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.network(
-                  product.image,
-                  height: 150,
-                ),
+                Image.network(product.image, height: 150),
 
                 const SizedBox(height: 10),
 
@@ -44,93 +36,76 @@ class EditScreen extends ConsumerWidget {
                     color: Colors.white,
                   ),
 
-                  child: Column(
+                  child: Table(
+                    columnWidths: const {
+                      0: FixedColumnWidth(100),
+                      1: FlexColumnWidth(),
+                    },
                     children: [
-                      Row(
+                      TableRow(
                         children: [
-                          const SizedBox(
-                            width: 100,
+                          const Padding(
+                            padding: EdgeInsets.only(top: 15),
                             child: Text(
                               "Title :",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
-
-                          Expanded(
-                            child: TextField(
-                              decoration: const InputDecoration(
-                                hintText: "Enter title",
-                              ),
+                          TextField(
+                            decoration: const InputDecoration(
+                              hintText: "Enter title",
                             ),
                           ),
                         ],
                       ),
 
-                      Row(
+                      TableRow(
                         children: [
-                          const SizedBox(
-                            width: 100,
+                          const Padding(
+                            padding: EdgeInsets.only(top: 15),
                             child: Text(
                               "Category :",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
-
-                          Expanded(
-                            child: TextField(
-                              decoration: const InputDecoration(
-                                hintText: "Enter category",
-                              ),
+                          TextField(
+                            decoration: const InputDecoration(
+                              hintText: "Enter category",
                             ),
                           ),
                         ],
                       ),
 
-                      Row(
-                       
+                      TableRow(
                         children: [
-                          const SizedBox(
-                            width: 100,
+                          const Padding(
+                            padding: EdgeInsets.only(top: 15),
                             child: Text(
                               "Description :",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
-
-                          Expanded(
-                            child: TextField(
-                              maxLines: 2,
-                              decoration: const InputDecoration(
-                                hintText: "Enter description",
-                              ),
+                          TextField(
+                            maxLines: 2,
+                            decoration: const InputDecoration(
+                              hintText: "Enter description",
                             ),
                           ),
                         ],
                       ),
 
-                      Row(
+                      TableRow(
                         children: [
-                          const SizedBox(
-                            width: 100,
+                          const Padding(
+                            padding: EdgeInsets.only(top: 15),
                             child: Text(
                               "Price :",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
-
-                          Expanded(
-                            child: TextField(
-                              decoration: const InputDecoration(
-                                hintText: "Enter price",
-                              ),
+                          TextField(
+                            decoration: const InputDecoration(
+                              hintText: "Enter price",
                             ),
                           ),
                         ],
